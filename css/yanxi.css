@@ -1,0 +1,10 @@
+/* ===== 研习社页面 ===== */
+.cplus-light { background: #f2f0ec; }
+.yc-chapter.light .vi-txt {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+}
+.yc-chapter.light .vi-txt h4 { color: #111; }
+.yc-chapter.light .vi-txt p { color: #555; }
+.yc-chapter.light .vi-txt .vi-no { background: #1f6fe0; }
+.yc-chapter.light .vi-img { box-shadow: 0 8px 30px rgba(0,0,0,.08); }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海报设计 · 邢慧东</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/icons.css">
+<link rel="stylesheet" href="css/posters.css">
+</head>
+<body class="icons-page">
+
+<!-- 常驻返回按钮 -->
+<a class="back-btn" href="index.html#portfolio">返回</a>
+
+<!-- 主标题 -->
+<header class="icons-hero">
+  <h1>海报设计作品集</h1>
+  <p>移动端传播物料 · 节点营销 / 产品 campaign / 招商宣发</p>
+</header>
+
+<!-- 系列横向展示（JS填充） -->
+<div id="seriesWrap"></div>
+
+<!-- 散张瀑布流（JS填充） -->
+<section class="masonry-wrap">
+  <h2 class="masonry-title">更多创作</h2>
+  <div class="masonry" id="masonry"></div>
+</section>
+
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="关闭"></button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张"></button>
+  <img id="lbImg" src="" alt="海报大图">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="下一张"></button>
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<script src="js/posters.js"></script>
+</body>
+</html>

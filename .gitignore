@@ -1,0 +1,8 @@
+_shots/
+_gen_*.py
+_patch_*.py
+_verify_*.py
+_add_*.py
+_update_*.py
+_diag_*.py
+*.new.mp4

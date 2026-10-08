@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视作品 · 邢慧东</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/icons.css">
+<link rel="stylesheet" href="css/videos.css">
+<link rel="stylesheet" href="css/video-detail.css">
+<style>.player { aspect-ratio: 16 / 9; }</style>
+</head>
+<body class="icons-page videos-page">
+
+<!-- 常驻返回按钮 -->
+<a class="back-btn" href="videos.html">返回</a>
+
+<!-- 主标题（JS按作品填充） -->
+<header class="icons-hero detail-hero">
+  <h1 id="vTitle"></h1>
+    <div class="chips" id="vChips"></div>
+</header>
+
+<!-- 正片区 -->
+<section class="player-wrap">
+  <video class="player" id="vPlayer" preload="metadata"></video>
+</section>
+
+<!-- 作品介绍 -->
+<section class="v-desc-wrap">
+  <div id="vDescBody"></div>
+</section>
+<script src="js/video-controls.js"></script>
+
+<script>
+const DATA = {
+  bubble:  { title: '谁说放空不是正经事？', tag: '影视广告', client: '泡泡玛特',   dur: '00:30',   src: 'assets/videos/others/bubble.mp4',  poster: 'assets/videos/others/bubble-poster.jpg' },
+  nestea:  { title: '茶萃小"汁"',          tag: '影视广告', client: '雀巢茶萃',   dur: '00:54',   src: 'assets/videos/others/nestea.mp4',  poster: 'assets/videos/others/nestea-poster.jpg' },
+  zihr:    { title: '"膜"力焕新',          tag: '影视广告', client: '紫竹药业',   dur: '00:48',   src: 'assets/videos/others/zihr.mp4',    poster: 'assets/videos/others/zihr-poster.jpg' },
+  culture: { title: '文化之脉',            tag: '纪录片',   client: '文港曾湾',   dur: '05:00',   src: 'assets/videos/others/culture.mp4', poster: 'assets/videos/others/culture-poster.jpg' },
+  lonely:  { title: '孤独的理想主义者',    tag: '纪录片',   client: '十六追光者', dur: '19:15',   src: 'assets/videos/others/lonely.mp4',  poster: 'assets/videos/others/lonely-poster.jpg' },
+};
+
+const DESC = {
+  bubble: '忙碌城市的另一端，一场“正经”的放空正在进行。影片采用逐帧手绘的定格式动画工艺，一帧一帧画出角色的每个呼吸与动作：蜡笔质感的小女孩漂浮在云朵上，闯入实拍的森林与林间栈道，把“什么都不做”拍成了一件认真的事。动画与实景的拼贴制造出跳脱现实的呼吸感，笔触的粗砺与自然的温润互相托底——当大脑被清空，想象力才刚刚上线。放空，是给情绪的一次合法充电。',
+  nestea: '如果生活是一场游戏，补水就是你的血条。影片采用第一人称游戏视角，画面底部叠加“水滴值100 / 能量条95”的闯关HUD：在网球场里钻铁网、翻越座椅、捡球得分，每一次弯腰都是一次体力的结算，而每一关的终点都藏着一件“装备”——冰镇雀巢茶萃。真实的夏日运动场景与游戏化界面互文，汗水与回甘在同一套数值系统里流转，让“喝茶萃”从解渴动作变成通关奖励：现实没有复活甲，但有一口回甘的健康茶萃。',
+  zihr: '一部用幽默消解疼痛的轻喜剧。影片从生活里最熟悉的“疼”切入——被朋友突然摵住手臂的龇牙咧嘴，到一片“膜”轻轻贴上的瞬间舒缓，表情从扭曲到释然只用了一个动作，产品“一贴即缓”的核心卖点就这样被演成了看得见的笑点。影片借“膜”与“魔”的谐音双关完成记忆锚点：哪里疼，贴哪里，“膜”力所至，焕然一新。夸张但不失真实的表演节奏，让一支功能型产品广告有了情景小品的轻快质感。',
+  culture: '',
+  lonely: ''
+};
+
+const id = new URLSearchParams(location.search).get('id') || 'bubble';
+const d = DATA[id];
+document.title = d.title + ' · 影视作品 · 邢慧东';
+document.getElementById('vTitle').textContent = d.title;
+/* 文化之脉：多节深度介绍 */
+const RICH = {
+  culture: [
+    { h: '主题阐释', t: '《文化之脉——就是曾湾》把镜头对准进贤县曾湾村——一个始建于五代十国、已有千余年历史的中国传统村落。影片以“脉”为题眼：文化在这里不是陈列的标本，而是仍在流动的血脉。全片以一位长者给孩子们讲故事的画外音为主轴，声音先入、画面后至，让千年村史从一位老人的絮语中缓缓展开；再以楹联作为各板块的题眼小标题，用古樟树、巷道、广场、湖桥这些“物”自己把文化讲出来。' },
+    { h: '叙事结构', list: [
+      '片头 · 楹联文化——“村史遥稽千载上；德风共仰一门中”，珠山、抚河、品字湖三组航拍空镜配长者声音先入，交代村落千年沿革；',
+      '历史文化——三百年古樟树如守护神般见证村落兴衰，青石板的传承广场承载春节团圆饭、端午划龙船、中秋烧塔的集体记忆，村史馆则收藏着从五代十国一路走来的成长印记；',
+      '家风文化——从恭亲巷的恭亲睦邻，到家风广场与家风家训馆的修身立德，再到以明嘉靖甲午解元、万历年间镇江知府吴摝谦命名的摝谦文化与“三让家风”，讲述谦逊、包容、先人后己的家族精神；',
+      '勤廉文化——清廉巷、清风广场与清廉馆构成勤廉文化教育基地，村中走出43位七品以上清廉名士且无一人违纪违法，吴摝谦任镇江知府期间修复漕渠、练湖、闸坝、重修府学的事迹成为叙事支点；',
+      '科举文化——夺魁巷里藏着古代书生苦读的影子，研学馆与进士馆讲述科举制度，村西品字湖上跨进士桥、状元桥、驸马桥三座古桥，“品”字取先祖告诫后学重品德修为之意；',
+      '毛笔文化——文笔广场收束全片：至今仍有上百户人家以制笔为业，做笔头、做笔杆、外出办厂，一家人一年的用度靠“一支笔”支撑；毛笔文化与文旅融合，让这座古村在当代继续生长。'
+    ] },
+    { h: '创作手记', t: '影片准备了两版解说词：Plan A以长者给娃娃讲故事的口吻全篇贯穿——“走了这条清廉巷，就能变清廉吗？”童言童语让勤廉主题有了轻盈的落点；Plan B则分板块解说、穿插情景剧，成片在两者之间取舍融合。拍摄上执行“角度×3、运动×3、景别×3”的矩阵化空镜方案，辅以延时摄影；同时带着采访提纲走进村庄，让村民的在地声音与创作者的外来视角互为补充——这正是片名“就是曾湾”的双重含义：文化之脉，就是曾湾；讲文化的人，就是曾湾。' }
+  ],
+  lonely: [
+    { h: '主题阐释', t: '这是系列纪录片《十六追光者》的第一集，导演即主人公——我自己，子元。影片以 MBTI 中最稀缺的人格类型 INFJ（提倡者）为切口，核心主题是“接纳矛盾，是 INFJ 成长的关键”：既渴望深度联结又需要独处充电，既执着理想又妥协现实，既共情他人又常忽视自我。风格定位为“纪实与诗意交织”——起床、工作、练字的日常流程是纪实的一面，公园绿意的空镜隐喻独处充电，字画“人生小满胜万全”的特写，则道出理想与现实的妥协认知。' },
+    { h: '系列企划', t: '《十六追光者》计划以 MBTI 的16种人格类型为切口，每集聚焦一位真实人物，共16集。选题的意义不止于解析性格标签的表面差异，更在于用它叩响理解自我、联结他人的门：“深夜复盘对话”不是矫情，是情感维度的自然；“讨厌无效社交”不是孤僻，是内倾直觉的筛选。影片想呈现 MBTI 的终极价值——用类型解放而非限制：当你知道“敏感是天赋”，便不再强迫自己外向；当你理解“计划感是需求”，便不再因他人的随性而自我怀疑。' },
+    { h: '影像语言', t: '全片依据133镜分镜脚本执行，用镜头完成 INFJ 心理的语言转译：特写承载控制欲——手机闹钟的反复亮灭强化时间秩序，PPT 边距精确到0.5厘米的调整过程对应判断维度的秩序需求；固定机位营造稳定感，对应 INFJ 对日常节奏的严格把控；空镜作为心理隐喻，公园、鱼缸、风扇、钟表各有其心理指向。声音设计上，毛笔摩擦宣纸的沙沙声、公园风声带来平静，与电话铃声引发的焦虑形成鲜明对比；插曲《路过人间》里“每段并肩，只不过是擦肩”的歌词，精准呼应影片对关系的珍惜与恐惧。' },
+    { h: '创作手记', t: '影片采用自采自访的双重身份：导演也是被观察者，采访提问与日常纪实互相穿插。那些真实的细节构成了 INFJ 的立体形象——手机常年静音、听到铃声心里“咯噔”一下；练毛笔字时“一下大脑就空了”，写不出好字索性自由发挥；从“天不怕地不怕就怕别人说自己普通”的少年，走到“越普通越好，接受自己的平凡”的今天。正如片中所说：理想主义者不缺自洽，缺的是被这个世界否定之后，还能坚持做一个理想主义者——真正的理想主义，是在无数次妥协之后，依然记得自己最初为何出发。' }
+  ]
+};
+
+const descEl = document.getElementById('vDesc');
+const body = document.getElementById('vDescBody');
+if (RICH[id]) {
+  body.innerHTML = RICH[id].map(s =>
+    `<div class="v-desc-head"><span class="v-desc-pill">${s.h}</span></div>` +
+    (s.t ? `<p class="v-desc">${s.t}</p>` :
+     `<ul class="v-desc-list">${s.list.map(x => `<li>${x}</li>`).join('')}</ul>`)
+  ).join('');
+} else if (DESC[id]) {
+  body.innerHTML = `<div class="v-desc-head"><span class="v-desc-pill">主题阐释</span></div><p class="v-desc">${DESC[id]}</p>`;
+} else {
+  body.parentElement.style.display = 'none';
+}
+document.getElementById('vChips').innerHTML =
+  `<span class="chip">时长 ${d.dur}</span><span class="chip">${d.tag}</span><span class="chip">${d.client}</span>`;
+const player = document.getElementById('vPlayer');
+player.poster = d.poster;
+player.innerHTML = `<source src="${d.src}" type="video/mp4">`;
+</script>
+</body>
+</html>

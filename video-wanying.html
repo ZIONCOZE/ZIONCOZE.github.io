@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>万应之神 · 影视作品 · 邢慧东</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/icons.css">
+<link rel="stylesheet" href="css/videos.css">
+<link rel="stylesheet" href="css/video-detail.css">
+<link rel="stylesheet" href="css/pdf-viewer.css">
+</head>
+<body class="icons-page videos-page">
+
+<!-- 常驻返回按钮 -->
+<a class="back-btn" href="videos.html">返回</a>
+
+<!-- 主标题 -->
+<header class="icons-hero detail-hero">
+  <h1>万应之神</h1>
+  <div class="chips">
+    <span class="chip">时长 20:00</span>
+    <span class="chip">二维动画</span>
+    <span class="chip">原创剧本</span>
+  </div>
+</header>
+
+<!-- ① 正片区 -->
+<section class="player-wrap">
+  <video class="player" controls preload="none" poster="assets/videos/wanying/cover-16x9.jpg">
+    <source src="assets/videos/wanying/wanying-1080p.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- ③④ 全创作流程 -->
+<main class="flow">
+  <section class="doc-section">
+    <div class="pdf-viewer" data-src="assets/videos/wanying/docs/overview.pdf" data-title="概述"></div>
+  </section>
+
+  <section class="doc-section">
+    <div class="pdf-viewer" data-src="assets/videos/wanying/docs/script.pdf" data-title="剧本"></div>
+  </section>
+
+  <section class="doc-section">
+    <div class="pdf-viewer" data-src="assets/videos/wanying/docs/storyboard.pdf" data-title="分镜"></div>
+  </section>
+
+  <section class="doc-section">
+    <div class="pdf-viewer" data-src="assets/videos/wanying/docs/report.pdf" data-title="制作报告"></div>
+  </section>
+
+  <!-- ④ AI 创作档案 -->
+  <section class="doc-section">
+    <div class="pdf-viewer" data-src="assets/videos/wanying/docs/prompt.pdf" data-title="Prompt"></div>
+  </section>
+</main>
+
+<script src="assets/pdfjs/pdf.min.js"></script>
+<script src="js/pdf-viewer.js"></script>
+<script src="js/video-controls.js"></script>
+</body>
+</html>

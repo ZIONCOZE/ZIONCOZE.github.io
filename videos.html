@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视作品 · 邢慧东</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/icons.css">
+<link rel="stylesheet" href="css/videos.css">
+<script>
+(function(){
+  function fix(img){
+    if(img._r === undefined) img._r = 0;
+    if(img._r >= 4) return;
+    if(img.closest && img.closest('.img-lightbox, .lightbox')) return;
+    var base = (img.currentSrc || img.src || '').split('?')[0];
+    if(!base || base.indexOf('data:') === 0 || base.indexOf('/assets/') === -1) return;
+    setTimeout(function(){ img.src = base + '?r=' + img._r + '.' + Date.now(); }, 500 * img._r);
+  }
+  window.addEventListener('error', function(e){
+    var t = e.target;
+    if(t && t.tagName === 'IMG' && !t.id) fix(t);
+  }, true);
+  window.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      document.querySelectorAll('img').forEach(function(img){
+        if(img.id) return; // 灯箱大图容器不处理
+        if(img.complete && img.naturalWidth === 0 && img.src) fix(img);
+      });
+    }, 1500);
+  });
+})();
+</script></head>
+<body class="icons-page videos-page">
+
+<!-- 常驻返回按钮 -->
+<a class="back-btn" href="index.html#portfolio">返回</a>
+
+<!-- 主标题 -->
+<header class="icons-hero">
+  <h1>影视作品</h1>
+  <p>影视广告 / 纪录片 / 故事片</p>
+</header>
+
+<!-- 作品卡片栅格（JS填充，入场为海报页同款放大渐显动画） -->
+<section class="video-grid" id="videoGrid"></section>
+
+<script src="js/videos.js"></script>
+</body>
+</html>

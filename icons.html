@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图标设计 · 邢慧东</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/icons.css">
+<script>
+(function(){
+  function fix(img){
+    if(img._r === undefined) img._r = 0;
+    if(img._r >= 4) return;
+    if(img.closest && img.closest('.img-lightbox, .lightbox')) return;
+    var base = (img.currentSrc || img.src || '').split('?')[0];
+    if(!base || base.indexOf('data:') === 0 || base.indexOf('/assets/') === -1) return;
+    setTimeout(function(){ img.src = base + '?r=' + img._r + '.' + Date.now(); }, 500 * img._r);
+  }
+  window.addEventListener('error', function(e){
+    var t = e.target;
+    if(t && t.tagName === 'IMG' && !t.id) fix(t);
+  }, true);
+  window.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      document.querySelectorAll('img').forEach(function(img){
+        if(img.id) return; // 灯箱大图容器不处理
+        if(img.complete && img.naturalWidth === 0 && img.src) fix(img);
+      });
+    }, 1500);
+  });
+})();
+</script></head>
+<body class="icons-page">
+
+<!-- 常驻返回按钮 -->
+<a class="back-btn" href="index.html#portfolio">返回</a>
+
+<!-- 主标题 -->
+<header class="icons-hero">
+  <h1>LOGO 设计作品集</h1>
+  <p>品牌标识 · 字标 / 图形标 / 组合标</p>
+</header>
+
+<!-- 20个logo卡片：四行跑马灯 -->
+<div class="logo-rows">
+
+  <div class="logo-row left">
+    <div class="track"></div>
+  </div>
+  <div class="logo-row right">
+    <div class="track"></div>
+  </div>
+  <div class="logo-row left">
+    <div class="track"></div>
+  </div>
+  <div class="logo-row right">
+    <div class="track"></div>
+  </div>
+</div>
+
+<!-- 方法论四步 -->
+<section class="method">
+  <div class="method-grid">
+    <div class="method-card">
+      <div class="method-head"><h3>洞察定位</h3><img loading="lazy" decoding="async" src="assets/step-1.png" alt="洞察定位"></div>
+      <p>设计从不始于画笔，始于提问。每一个 LOGO 动手之前，先回答三个问题：这是谁的品牌、说给谁听、凭什么被记住。市场、人群、竞品，先看清位置，再谈表达。</p>
+    </div>
+    <div class="method-card">
+      <div class="method-head"><h3>概念提取</h3><img loading="lazy" decoding="async" src="assets/step-3.png" alt="概念提取"></div>
+      <p>从品牌身上找到那一个"最"，最核心的特质、最动人的故事、最独有的事物。把它凝练成一个可被视觉化的隐喻——图形的种子在这一步埋下。</p>
+    </div>
+    <div class="method-card">
+      <div class="method-head"><h3>图形锤炼</h3><img loading="lazy" decoding="async" src="assets/step-2.png" alt="图形锤炼"></div>
+      <p>减法比加法更难。去掉解释，留下直觉；去掉复杂，留下辨识。让图形在方寸之间立得住、缩得小、记得牢。</p>
+    </div>
+    <div class="method-card">
+      <div class="method-head"><h3>系统延展</h3><img loading="lazy" decoding="async" src="assets/step-4.png" alt="系统延展"></div>
+      <p>一个 LOGO 的完成度，不在于它有多好看，而在于它能走多远——门店招牌、包装物料、小程序图标、新媒体头像，图形在每一个触点上保持统一而有生命力。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 案例引导语 -->
+<section class="icons-outro">
+  <p>每一个，都从洞察开始，以系统结束。</p>
+</section>
+
+<script>
+// 填充四行卡片：每行5个，1-3行左移，2-4行右移
+const rows = document.querySelectorAll('.logo-row .track');
+rows.forEach((track, r) => {
+  for (let n = 0; n < 3; n++) {          // 复制三份，确保宽屏下无空挡
+    for (let i = r * 5 + 1; i <= r * 5 + 5; i++) {
+      const card = document.createElement('div');
+      card.className = 'flip-card';
+      card.innerHTML =
+        '<div class="flip-inner">' +
+          `<div class="face front"><img loading="lazy" decoding="async" src="assets/logos/${i}-正.png" alt="LOGO案例${i}正面"></div>` +
+          `<div class="face back"><img loading="lazy" decoding="async" src="assets/logos/${i}-反.png" alt="LOGO案例${i}背面"></div>` +
+        '</div>';
+      track.appendChild(card);
+    }
+  }
+});
+</script>
+</body>
+</html>

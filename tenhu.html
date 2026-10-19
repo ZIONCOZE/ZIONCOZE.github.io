@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>十虎 Ten Tiger · 原创IP形象设计 · 邢慧东</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/projects.css">
+<link rel="stylesheet" href="css/yichun.css">
+<link rel="stylesheet" href="css/yanxi.css">
+<link rel="stylesheet" href="css/tenhu.css">
+<script>
+(function(){
+  function fix(img){
+    if(img._r === undefined) img._r = 0;
+    if(img._r >= 4) return;
+    if(img.closest && img.closest('.img-lightbox, .lightbox')) return;
+    var base = (img.currentSrc || img.src || '').split('?')[0];
+    if(!base || base.indexOf('data:') === 0 || base.indexOf('/assets/') === -1) return;
+    setTimeout(function(){ img.src = base + '?r=' + img._r + '.' + Date.now(); }, 500 * img._r);
+  }
+  window.addEventListener('error', function(e){
+    var t = e.target;
+    if(t && t.tagName === 'IMG' && !t.id) fix(t);
+  }, true);
+  window.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      document.querySelectorAll('img').forEach(function(img){
+        if(img.id) return; // 灯箱大图容器不处理
+        if(img.complete && img.naturalWidth === 0 && img.src) fix(img);
+      });
+    }, 1500);
+  });
+})();
+</script></head>
+<body class="projects-page tenhu-page">
+
+<a class="back-btn" href="projects.html">返回</a>
+
+<!-- ===== Hero ===== -->
+<header class="yc-hero">
+  <span class="pill-tag">TENTIGER · 原创IP</span>
+  <h1>十虎<em>Ten Tiger · 原创IP形象</em>设计</h1>
+  <p>一只不需要老虎威严的老虎。拒绝凶猛，只负责可爱。</p>
+</header>
+
+<!-- ===== CHAPTER 01 标志与标准字 ===== -->
+<section class="yc-chapter dark">
+  <div class="yc-wrap">
+    <div class="chapter-head reveal">
+      <span class="pill-tag pill-tag--light">CHAPTER 01</span>
+      <h2>标志与标准字</h2>
+      <p>把虎威拆掉，只留可爱。</p>
+    </div>
+    <div class="vi-group reveal">
+      <div class="chapter-sub"><h3>壹 · Logo 组合</h3><p>虎头符号 × 字标锁定</p></div>
+
+      <div class="vi-item vi-item--stack">
+        <div class="vi-txt"><span class="vi-no">01</span><h4>虎头符号与字标<em>Logo Lockup</em></h4><p>虎头以极简线条重构——省去獠牙与利爪，只留吊梢眼、三撇须与额间王字。"Ten Tiger®"粗字标与"十虎"并置，符号在 16px 的表情尺度与 5 米的门头尺度之间都能成立。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-logo.webp" alt="虎头符号与字标" data-full="assets/tenhu/t-logo.jpg"></div>
+      </div>
+
+      <div class="chapter-sub"><h3>贰 · 元部件</h3><p>构成形象的基本单元</p></div>
+
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">02</span><h4>拳头与手势<em>Paws &amp; Gesture</em></h4><p>圆润的爪子是十虎的签名件——攥紧是拳头，张开是指向。没有利爪，连"手"都是软的。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r05.png" alt="拳头爪子"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">03</span><h4>指向手势<em>Pointing</em></h4><p>一根肉手指，指哪看哪。延展物料里最常用的引导件。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r08.png" alt="指向手势"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">04</span><h4>被咬掉一口<em>Bite Mark</em></h4><p>连身体都能被"咬掉一口"——用残缺制造幽默，是十虎与世界开玩笑的方式。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r09.png" alt="被咬掉一口的身体"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 02 形象规范 ===== -->
+<section class="yc-chapter dark">
+  <div class="yc-wrap">
+    <div class="chapter-head reveal">
+      <span class="pill-tag pill-tag--light">CHAPTER 02</span>
+      <h2>形象规范</h2>
+      <p>胖乎乎的默认值。</p>
+    </div>
+    <div class="vi-group reveal">
+      <div class="chapter-sub"><h3>叁 · 三视图</h3><p>正 · 侧 · 背</p></div>
+
+      <div class="vi-item vi-item--stack">
+        <div class="vi-txt"><span class="vi-no">05</span><h4>标准三视图<em>Model Sheet</em></h4><p>正、侧、背三视图确立造型基准：二头身比例、无颈连接、重心下沉。任何姿态延展都从这套"胖乎乎的默认值"出发——老虎可以躺平、可以飞起，但不可以变瘦。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-model.webp" alt="十虎三视图"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 03 表情演绎 ===== -->
+<section class="yc-chapter light">
+  <div class="yc-wrap">
+    <div class="chapter-head reveal">
+      <span class="pill-tag">CHAPTER 03</span>
+      <h2>表情演绎</h2>
+      <p>十六连拍的情绪语法。</p>
+    </div>
+    <div class="vi-group reveal">
+      <div class="chapter-sub"><h3>肆 · 表情包</h3><p>微信表情专辑精选</p></div>
+
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">06</span><h4>星星眼<em>Starstruck</em></h4><p>心动时刻——眼里全是星星，嘴上绝不承认。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r10.png" alt="星星眼"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">07</span><h4>爱心眼<em>Love-struck</em></h4><p>上头了，口水都挂不住了。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r11.png" alt="爱心眼"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">08</span><h4>瀑布泪<em>Waterfall</em></h4><p>委屈到极点的表达方式——眼泪要成瀑才够诚意。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r12.png" alt="大哭"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">09</span><h4>张大嘴<em>Roar</em></h4><p>唯一的"怒吼"——青筋都出来了，看着还是像在撒娇。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r13.png" alt="张大嘴怒吼"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">10</span><h4>冷漠脸<em>Whatever</em></h4><p>眯眼、撇嘴——"就这？"的视觉版本。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r14.png" alt="冷漠眯眼"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">11</span><h4>龇牙笑<em>Grin</em></h4><p>难得露一次牙——笑得没心没肺，憨得理直气壮。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r15.png" alt="龇牙笑"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">12</span><h4>发烧了<em>Under the Weather</em></h4><p>体温计贴在脑门上，耳朵都烧糊了——不舒服也要可可爱爱。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r16.png" alt="发烧生病"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">13</span><h4>吓傻了<em>Shocked</em></h4><p>瞳孔地震，脸先僵住——被生活惊到的第一反应。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r20.png" alt="吓傻特写"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">14</span><h4>开心坐<em>Happy Sitting</em></h4><p>盘腿一坐，笑出双下巴——十虎最松弛的日常状态。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-r28.webp" alt="盘腿坐笑" data-full="assets/tenhu/t-r28.png"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">15</span><h4>害羞捂脸<em>So Shy</em></h4><p>脸红到耳根，两只爪子捂不住的那点不好意思。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-r29.webp" alt="害羞捂脸" data-full="assets/tenhu/t-r29.png"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">16</span><h4>搓手手<em>Scheming</em></h4><p>搓手、捂嘴、眼睛瞟——又在憋什么坏主意。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-r30.webp" alt="搓手坏笑" data-full="assets/tenhu/t-r30.png"></div>
+      </div>
+
+      <div class="chapter-sub"><h3>伍 · 表情专辑</h3><p>微信表情商店</p></div>
+
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">17</span><h4>表情包专辑页<em>Sticker Album</em></h4><p>十六个表情在微信表情商店完整上线——星星眼是心动，爱心眼是上头，瀑布泪是委屈到极点。表情包是这只虎与世界对话的主要方式。</p></div>
+        <div class="vi-img vi-card-fit"><img loading="lazy" decoding="async" src="assets/tenhu/t-album.webp" alt="微信表情专辑页"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 04 主题延展 ===== -->
+<section class="yc-chapter light cplus-light">
+  <div class="yc-wrap">
+    <div class="chapter-head reveal">
+      <span class="pill-tag">CHAPTER 04</span>
+      <h2>主题延展</h2>
+      <p>任何场景里都站得住。</p>
+    </div>
+    <div class="vi-group reveal">
+      <div class="chapter-sub"><h3>陆 · 新年篇</h3><p>节日限定</p></div>
+
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">18</span><h4>福气虎<em>Fu Is Here</em></h4><p>戴虎头帽、捧"福"字——本命年的第一份祝福，由十虎亲自送达。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r01.png" alt="捧福字"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">19</span><h4>红包虎<em>Red Envelope</em></h4><p>揣着红包咧嘴笑——压岁钱已到账，请查收。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r02.png" alt="揣红包"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">20</span><h4>拜年虎<em>New Year Call</em></h4><p>抱拳作揖，年味满满——传统拜年礼配上圆滚滚的身形，喜感加倍。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r03.png" alt="抱拳拜年"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">21</span><h4>发财虎<em>Get Rich</em></h4><p>高举"发财"卷轴——新年愿望简单直接，说出来不丢人。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r04.png" alt="举发财卷轴"></div>
+      </div>
+
+      <div class="chapter-sub"><h3>柒 · 姿态与剧情</h3><p>日常动作库</p></div>
+
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">22</span><h4>防护虎<em>Safety First</em></h4><p>防护服一穿，露出的还是那双吊梢眼——认真防疫的十虎，也要保持微笑。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-r17.webp" alt="防护服" data-full="assets/tenhu/t-r17.png"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">23</span><h4>登月虎<em>To the Moon</em></h4><p>登上月球，顺手摸一把陨石坑——把"猛虎下山"改写成"憨虎上天"。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-r18.webp" alt="宇航员登月" data-full="assets/tenhu/t-r18.webp"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">24</span><h4>咬尾巴<em>Tail Time</em></h4><p>瘫坐回头咬尾巴——无聊到极致，也是一种松弛。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-r19.webp" alt="回头咬尾巴" data-full="assets/tenhu/t-r19.png"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">25</span><h4>大声喊<em>Shout Out</em></h4><p>张嘴大喊，爪子张开——重要的事情说三遍，喊出来才够响。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-r21.webp" alt="张嘴大喊" data-full="assets/tenhu/t-r21.png"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">26</span><h4>四脚朝天<em>Wiped Out</em></h4><p>摔个四脚朝天也不恼——躺平这件事，十虎最有经验。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-r22.webp" alt="四脚朝天" data-full="assets/tenhu/t-r22.png"></div>
+      </div>
+
+      <div class="chapter-sub"><h3>捌 · 特别版</h3><p>彩蛋与探索</p></div>
+
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">27</span><h4>狮子十虎<em>Lion Mane</em></h4><p>戴上狮子鬃毛——照猫画虎，不如画个狮子。致敬彩蛋一枚。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-r26.webp" alt="狮子鬃毛彩蛋" data-full="assets/tenhu/t-r26.png"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">28</span><h4>银色特别版<em>Silver Edition</em></h4><p>褪去橙黄，换成金属银——流汗吐舌的十虎，探索材质的另一种可能。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/tenhu/t-r25.webp" alt="银色流汗吐舌" data-full="assets/tenhu/t-r25.png"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">29</span><h4>银色大脸<em>Silver Face</em></h4><p>吐舌卖萌的银色虎头——同一只虎，换个颜色照样憨。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r24.png" alt="银色大脸"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">30</span><h4>咧嘴笑<em>Big Smile</em></h4><p>收尾的表情留给笑——十虎不出手，出手就十成。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/tenhu/t-r27.png" alt="咧嘴笑特写"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 尾声 -->
+  <div class="yc-epilogue reveal">
+    <p class="epi-line">每一只老虎都不必凶猛，<br>可爱本身也是一种威力。</p>
+    <span class="epi-mark">TEN TIGER · 十虎</span>
+  </div>
+</section>
+
+<!-- ===== 灯箱 ===== -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="关闭"></button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张"></button>
+  <img id="lbImg" src="" alt="大图预览">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="下一张"></button>
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+<script>
+(function(){
+  const cards = [...document.querySelectorAll('.vi-item')]
+    .filter(c => c.querySelector('img'));
+  const items = cards.map(c => {
+    const img = c.querySelector('img');
+    const h4 = c.querySelector('.vi-txt h4');
+    const em = c.querySelector('.vi-txt h4 em');
+    let title = h4 ? h4.textContent : img.alt;
+    if (em && title.includes(em.textContent)) title = title.replace(em.textContent, '').trim();
+    return { src: img.dataset.full || img.src, title: title, sub: em ? em.textContent : '' };
+  });
+  const lb = document.getElementById('lightbox'),
+        lbImg = document.getElementById('lbImg'),
+        lbCap = document.getElementById('lbCaption');
+  let idx = 0;
+  function show(){
+    const it = items[idx];
+    lbImg.classList.add('lb-dim');
+    setTimeout(() => {
+      lbImg.src = it.src;
+      lbCap.textContent = it.title + (it.sub ? '　·　' + it.sub : '') + '　' + (idx+1) + ' / ' + items.length;
+      requestAnimationFrame(() => requestAnimationFrame(() => lbImg.classList.remove('lb-dim')));
+    }, 300);
+  }
+  function open(i){
+    idx = i; show();
+    lb.classList.add('open'); document.body.classList.add('lb-blur');
+    requestAnimationFrame(() => requestAnimationFrame(() => lb.classList.add('show')));
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    lb.classList.remove('show'); document.body.classList.remove('lb-blur');
+    setTimeout(() => { lb.classList.remove('open'); document.body.style.overflow = ''; }, 400);
+  }
+  function step(d){
+    idx = (idx + d + items.length) % items.length; show();
+  }
+  cards.forEach((c, i) => { c.style.cursor = 'zoom-in'; c.addEventListener('click', () => open(i)); });
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', () => step(-1));
+  document.getElementById('lbNext').addEventListener('click', () => step(1));
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') step(1);
+    else if (e.key === 'ArrowLeft') step(-1);
+  });
+
+  /* reveal 入场 */
+  const io = new IntersectionObserver(es => es.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+  }), { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>

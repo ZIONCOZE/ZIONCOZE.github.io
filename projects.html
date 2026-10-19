@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目设计作品集 · 邢慧东</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/projects.css">
+<link rel="stylesheet" href="css/projects-new.css">
+<script>
+(function(){
+  function fix(img){
+    if(img._r === undefined) img._r = 0;
+    if(img._r >= 4) return;
+    if(img.closest && img.closest('.img-lightbox, .lightbox')) return;
+    var base = (img.currentSrc || img.src || '').split('?')[0];
+    if(!base || base.indexOf('data:') === 0 || base.indexOf('/assets/') === -1) return;
+    setTimeout(function(){ img.src = base + '?r=' + img._r + '.' + Date.now(); }, 500 * img._r);
+  }
+  window.addEventListener('error', function(e){
+    var t = e.target;
+    if(t && t.tagName === 'IMG' && !t.id) fix(t);
+  }, true);
+  window.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      document.querySelectorAll('img').forEach(function(img){
+        if(img.id) return; // 灯箱大图容器不处理
+        if(img.complete && img.naturalWidth === 0 && img.src) fix(img);
+      });
+    }, 1500);
+  });
+})();
+</script></head>
+<body class="projects-new-page">
+
+<a class="back-btn" href="index.html">返回</a>
+
+<header class="pj-head reveal">
+  <h1>项目设计作品集</h1>
+  <p>品牌全案 · LOGO规范 / IP设计 / 文创延展</p>
+</header>
+
+<div class="pj-stage">
+  <div class="pj-row">
+    <a class="pj-card reveal" href="yichun.html">
+      <span class="pj-cover"><img loading="lazy" decoding="async" src="assets/yanxi-cover-yichun.png" alt="宜春学院"></span>
+      <span class="pj-bar"><b>VI系统 / IP设计</b><i>宜春学院</i></span>
+    </a>
+    <a class="pj-card reveal" href="yanxi.html">
+      <span class="pj-cover"><img loading="lazy" decoding="async" src="assets/yanxi-cover-yanxi.png" alt="研习社"></span>
+      <span class="pj-bar"><b>VI系统</b><i>研习社</i></span>
+    </a>
+    <a class="pj-card reveal" href="tenhu.html">
+      <span class="pj-cover"><img loading="lazy" decoding="async" src="assets/yanxi-cover-tenhu.png" alt="十虎 / TenTiger"></span>
+      <span class="pj-bar"><b>IP设计</b><i>十虎 / TenTiger</i></span>
+    </a>
+  </div>
+  <div class="pj-row pj-row--two">
+    <a class="pj-card reveal" href="chunri.html">
+      <span class="pj-cover"><img loading="lazy" decoding="async" src="assets/yanxi-cover-chunri.png" alt="春日计划"></span>
+      <span class="pj-bar"><b>活动物料</b><i>春日计划</i></span>
+    </a>
+    <a class="pj-card reveal" href="meixy.html">
+      <span class="pj-cover"><img loading="lazy" decoding="async" src="assets/yanxi-cover-meixiaoyue.png" alt="美小约"></span>
+      <span class="pj-bar"><b>小程序详情页 / 引导页设计</b><i>美小约</i></span>
+    </a>
+  </div>
+</div>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(en => en.isIntersecting && en.target.classList.add('in')), { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>研习社 · 品牌与系统设计 · 邢慧东</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/projects.css">
+<link rel="stylesheet" href="css/yichun.css">
+<link rel="stylesheet" href="css/yanxi.css">
+<script>
+(function(){
+  function fix(img){
+    if(img._r === undefined) img._r = 0;
+    if(img._r >= 4) return;
+    if(img.closest && img.closest('.img-lightbox, .lightbox')) return;
+    var base = (img.currentSrc || img.src || '').split('?')[0];
+    if(!base || base.indexOf('data:') === 0 || base.indexOf('/assets/') === -1) return;
+    setTimeout(function(){ img.src = base + '?r=' + img._r + '.' + Date.now(); }, 500 * img._r);
+  }
+  window.addEventListener('error', function(e){
+    var t = e.target;
+    if(t && t.tagName === 'IMG' && !t.id) fix(t);
+  }, true);
+  window.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      document.querySelectorAll('img').forEach(function(img){
+        if(img.id) return; // 灯箱大图容器不处理
+        if(img.complete && img.naturalWidth === 0 && img.src) fix(img);
+      });
+    }, 1500);
+  });
+})();
+</script></head>
+<body class="projects-page yanxi-page">
+
+<a class="back-btn" href="projects.html">返回</a>
+
+<!-- ===== Hero ===== -->
+<header class="yc-hero">
+  <span class="pill-tag">MCOLLEGE · 研习社</span>
+  <h1>研习社<em>品牌视觉 × 团队系统</em>设计</h1>
+  <p>一枚符号，一门课程，一套系统——从品牌到组织的完整设计。</p>
+</header>
+
+<!-- ===== Logo 章 ===== -->
+<section class="yc-chapter dark">
+  <div class="yc-wrap">
+    <div class="chapter-head reveal">
+      <span class="pill-tag pill-tag--light">CHAPTER 01</span>
+      <h2>Logo 设计规范</h2>
+      <p>一道波浪，让学习有了流动的形状。</p>
+    </div>
+    <div class="vi-group reveal">
+      <div class="chapter-sub"><h3>Logo 规范手册</h3><p>符号、字标与组合</p></div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P01</span><h4>Logo 设计探索<em>Logo Exploration</em></h4><p>以字母“m”与翻动的书页为原型，演化为三道蓝色的波浪线——既是知识的流动，也是研习不息的节奏。多稿推演确定最终形态：简洁、轻盈、富有现代感。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/logo-p01.png" alt="Logo 设计探索"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P02</span><h4>Logo 标准稿 · 深色<em>Logo on Dark</em></h4><p>标准稿在深色背景下的呈现效果，波浪符号保持湖蓝色，确保品牌识别度。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/logo-p02.png" alt="Logo 标准稿 · 深色"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P03</span><h4>英文标准字<em>Wordmark · mcollege.</em></h4><p>小写无衬线字标“mcollege.”，圆润的字形与波浪符号气质统一，句点收尾，象征学习永不止步。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/logo-p03.png" alt="英文标准字"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P04</span><h4>中文标准字 · 研习社<em>Wordmark · 研习社</em></h4><p>“研习社”三字采用现代黑体，笔画干净利落，与英文字标并置使用。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/logo-p04.png" alt="中文标准字 · 研习社"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P05</span><h4>组合规范 · 浅色<em>Lockup · Light</em></h4><p>符号与中英文字标的组合规范，明确比例与间距，保证组合使用的统一性。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/logo-p05.png" alt="组合规范 · 浅色"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P06</span><h4>组合规范 · 深色<em>Lockup · Dark</em></h4><p>深色背景下的组合应用规范，覆盖深浅两种使用场景。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/logo-p06.webp" alt="组合规范 · 深色"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P07</span><h4>空间应用<em>Space Application</em></h4><p>将品牌视觉落地到研习空间：前台的符号墙与开放研习区的氛围呈现。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/logo-p07.webp" alt="空间应用"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 成功九步章 ===== -->
+<section class="yc-chapter light">
+  <div class="yc-wrap">
+    <div class="chapter-head reveal">
+      <span class="pill-tag">CHAPTER 02</span>
+      <h2>成功九步 · 团队实践手册</h2>
+      <p>把成长拆成九个可以执行的步骤。</p>
+    </div>
+    <div class="vi-group reveal">
+      <div class="chapter-sub"><h3>手册内页设计</h3><p>九步闭环，步步可落地</p></div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P01</span><h4>成功九步 · 封面<em>Nine Steps to Success</em></h4><p>“成功九步”团队实践手册封面。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/nine-p01.png" alt="成功九步 · 封面"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P02</span><h4>核心理念<em>Core Idea</em></h4><p>成功九步贯穿团队建设的始终——每一个阶段都要进行成功九步，不同阶段要做对应的成功九步。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/nine-p02.png" alt="核心理念"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P03</span><h4>九步总览<em>Contents</em></h4><p>梦想、承诺、学习、列名单、邀约、沟通、感召、咨询检视、复制——九个步骤构成完整的成长闭环。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/nine-p03.png" alt="九步总览"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P04</span><h4>Step 01 · 梦想<em>Dream</em></h4><p>梦想是深藏在内心深处最深切的渴望，是一种强烈的需求。它能激发潜意识中所有的潜能——每当想起它，就会兴奋不已。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/yanxi/nine-p05.webp" alt="Step 01 · 梦想" data-full="assets/yanxi/nine-p05.png"></div>
+      </div>
+      <div class="vi-item vi-item--stack">
+        <div class="vi-txt"><span class="vi-no">P05</span><h4>Step 02 · 承诺<em>Commitment</em></h4><p>承诺的三个等级：试试看——根本不会成功；尽力而为——有可能成功；全力以赴——意味着不惜一切代价、永不言败、坚持到底。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/yanxi/nine-p11.webp" alt="Step 02 · 承诺" data-full="assets/yanxi/nine-p11.png"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P06</span><h4>Step 03 · 学习<em>Learning</em></h4><p>Why–How–What：为什么学、学什么、怎么学。“要成赢家，先成专家”“多学少挫”，围绕精神健康、身体健康、口袋健康三个维度持续学习。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/nine-p13.png" alt="Step 03 · 学习"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P07</span><h4>Step 04 · 列名单<em>List Making</em></h4><p>列名单的三个原则：不做判官、名单越大越好、不要丢失。预先判定谁会做、谁不会做，是新人最容易犯的错误。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/nine-p23.png" alt="Step 04 · 列名单"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P08</span><h4>Step 05 · 邀约<em>Invitation</em></h4><p>邀约的种类：电话、微信等最常用；面对面邀约也称自然邀约；电子邮件与短视频平台同样有效。邀约要保持高姿态。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/yanxi/nine-p31.webp" alt="Step 05 · 邀约" data-full="assets/yanxi/nine-p31.png"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P09</span><h4>Step 06 · 沟通<em>Communication</em></h4><p>找到对方的需求点，产生合作共赢的局面。沟通三板斧：产品、商机、模式，始终结合对方的需求展开。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/nine-p38.png" alt="Step 06 · 沟通"></div>
+      </div>
+      <div class="vi-item vi-item--stack">
+        <div class="vi-txt"><span class="vi-no">P10</span><h4>Step 07 · 感召<em>Inspiration</em></h4><p>感召是销售工作的最后一步，被称做临门一脚——讲完商机，不要错过新客户，24小时内完成感召。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/yanxi/nine-p41.webp" alt="Step 07 · 感召" data-full="assets/yanxi/nine-p41.png"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P11</span><h4>Step 08 · 咨询检视<em>Consult & Review</em></h4><p>不越级、绝不向旁部门咨询；检视可以确保 100% 做到、100% 复制；检视一定要背靠背。检视线就是团队的生命线。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/yanxi/nine-p45.webp" alt="Step 08 · 咨询检视" data-full="assets/yanxi/nine-p45.png"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P12</span><h4>Step 09 · 复制<em>Duplication</em></h4><p>可以复制的就是最好的！可以复制是检验我们所有行为的唯一标准。简单、统一、可复制。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/nine-p50.png" alt="Step 09 · 复制"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P13</span><h4>100% 复制的方法<em>How to Duplicate</em></h4><p>100% 复制的唯一正确方法：第一步我做你看，第二步你做我看——在做的过程中完成传承。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/nine-p52.png" alt="100% 复制的方法"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 高绩效团队章 ===== -->
+<section class="yc-chapter light cplus-light">
+  <div class="yc-wrap">
+    <div class="chapter-head reveal">
+      <span class="pill-tag">CHAPTER 03</span>
+      <h2>高绩效团队实践系统</h2>
+      <p>不止于课堂，聚焦课堂之外的落地。</p>
+    </div>
+    <div class="vi-group reveal">
+      <div class="chapter-sub"><h3>系统设计</h3><p>从个人成长到业绩突破</p></div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P01</span><h4>高绩效团队实践计划 · 封面<em>C+ Program</em></h4><p>提升领导能力、构建高绩效团队、创造卓越成果。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/cplus-p01.png" alt="高绩效团队实践计划 · 封面"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P02</span><h4>我们是谁<em>Who We Are</em></h4><p>致力于帮助企业提升管理者领导能力，构建高绩效团队，创造卓越成果。坚持以人为本、依道而行、从心出发、知行合一。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/cplus-p03.png" alt="我们是谁"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P03</span><h4>企业的本质<em>Nature of Enterprise</em></h4><p>企业需要的不是培训课程，而是一套结合工作实践、提升个人能力和团队协作、实现高绩效的落地系统——经营对外满足需求，管理对内提升效率。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/cplus-p04.png" alt="企业的本质"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P04</span><h4>三大主题<em>Three Themes</em></h4><p>管理自己、管理他人、管理团队——由内而外的领导力进阶路径。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/cplus-p07.png" alt="三大主题"></div>
+      </div>
+      <div class="vi-item vi-item--stack">
+        <div class="vi-txt"><span class="vi-no">P05</span><h4>四大板块<em>Four Modules</em></h4><p>个人成长、团队赋能、落地实践、业绩突破，构成完整的实践体系。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/cplus-p08.png" alt="四大板块"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P06</span><h4>铁三角 · 团队教练模型<em>Iron Triangle Model</em></h4><p>打造持续成功团队的系统方法论：以“团队 5 力”的打造，支撑任务（事）与人员（人）层面的“3 高”目标。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/yanxi/cplus-p14.webp" alt="铁三角 · 团队教练模型" data-full="assets/yanxi/cplus-p14.png"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P07</span><h4>BANI 时代组织冲浪全景图<em>BANI Surfing Map</em></h4><p>树立全员的危机意识，激发全员的改变意愿，输入匹配的变革知识，提升集体变革能力——乘风破浪、拐点跃进。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/yanxi/cplus-p15.webp" alt="BANI 时代组织冲浪全景图" data-full="assets/yanxi/cplus-p15.png"></div>
+      </div>
+      <div class="vi-item vi-item side">
+        <div class="vi-txt"><span class="vi-no">P08</span><h4>整体内容与架构<em>Program Structure</em></h4><p>100 天工作生活实践：3 个月不同主题，覆盖管理自己、管理他人、管理团队；5 次课程集中学习，每月管理系统落地跟进。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/cplus-p19.png" alt="整体内容与架构"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P09</span><h4>五大课程主题<em>Five Themes</em></h4><p>C 计划实践心智慧：我是一切的根源，爱是一切的答案；欣赏、感恩与嘉许，是团队最好的黏合剂。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/cplus-p36.png" alt="五大课程主题"></div>
+      </div>
+      <div class="vi-item vi-item--stack">
+        <div class="vi-txt"><span class="vi-no">P10</span><h4>系统价值<em>System Value</em></h4><p>目标体系的有效建立，企业整体目标与个人目标有效结合；核心管理人员领导能力显著提升；团队教练文化落地生根。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/t/yanxi/cplus-p37.webp" alt="系统价值" data-full="assets/yanxi/cplus-p37.png"></div>
+      </div>
+      <div class="vi-item vi-item--flip">
+        <div class="vi-txt"><span class="vi-no">P11</span><h4>教育不是灌输，而是点燃<em>Lighting a Fire</em></h4><p>以全系列的金句收尾——好的教育与领导，从来都是点燃而非灌输。</p></div>
+        <div class="vi-img"><img loading="lazy" decoding="async" src="assets/yanxi/cplus-p41.png" alt="教育不是灌输，而是点燃"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 灯箱 ===== -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="关闭"></button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张"></button>
+  <img id="lbImg" src="" alt="大图预览">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="下一张"></button>
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+<script>
+(function(){
+  const cards = [...document.querySelectorAll('.vi-item, .apply-card, .ba-card, .hb-card')]
+    .filter(c => c.tagName === 'IMG' || c.querySelector('img'));
+  const items = cards.map(c => {
+    const img = c.tagName === 'IMG' ? c : c.querySelector('img');
+    const b = c.querySelector('.bc-cap b');
+    const span = c.querySelector('.bc-cap span');
+    return {
+      src: img.dataset.full || img.src,
+      title: b ? b.textContent : img.alt,
+      sub: span ? span.textContent : ''
+    };
+  });
+  const lb = document.getElementById('lightbox'),
+        lbImg = document.getElementById('lbImg'),
+        lbCap = document.getElementById('lbCaption');
+  let idx = 0;
+  function show(){
+    const it = items[idx];
+    lbImg.classList.add('lb-dim');
+    setTimeout(() => {
+      lbImg.src = it.src;
+      lbCap.textContent = it.title + (it.sub ? '　·　' + it.sub : '') + '　' + (idx+1) + ' / ' + items.length;
+      requestAnimationFrame(() => requestAnimationFrame(() => lbImg.classList.remove('lb-dim')));
+    }, 300);
+  }
+  function open(i){
+    idx = i; lbImg.src = items[i].src;
+    lbCap.textContent = items[i].title + (items[i].sub ? '　·　' + items[i].sub : '') + '　' + (i+1) + ' / ' + items.length;
+    lb.classList.add('open'); document.body.classList.add('lb-blur');
+    requestAnimationFrame(() => requestAnimationFrame(() => lb.classList.add('show')));
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    lb.classList.remove('show'); document.body.classList.remove('lb-blur');
+    setTimeout(() => { lb.classList.remove('open'); document.body.style.overflow = ''; }, 400);
+  }
+  cards.forEach((c, i) => { if (c.tagName !== 'IMG') c.style.cursor = 'zoom-in'; c.addEventListener('click', () => open(i)); });
+  document.getElementById('lbClose').addEventListener('click', close);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.getElementById('lbPrev').addEventListener('click', () => { idx = (idx - 1 + items.length) % items.length; show(); });
+  document.getElementById('lbNext').addEventListener('click', () => { idx = (idx + 1) % items.length; show(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') { idx = (idx - 1 + items.length) % items.length; show(); }
+    if (e.key === 'ArrowRight') { idx = (idx + 1) % items.length; show(); }
+  });
+  const io = new IntersectionObserver(es => es.forEach(en => en.isIntersecting && en.target.classList.add('in')), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>

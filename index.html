@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邢慧东 · 个人介绍</title>
+<link rel="stylesheet" href="css/style.css">
+<script>
+(function(){
+  function fix(img){
+    if(img._r === undefined) img._r = 0;
+    if(img._r >= 4) return;
+    if(img.closest && img.closest('.img-lightbox, .lightbox')) return;
+    var base = (img.currentSrc || img.src || '').split('?')[0];
+    if(!base || base.indexOf('data:') === 0 || base.indexOf('/assets/') === -1) return;
+    setTimeout(function(){ img.src = base + '?r=' + img._r + '.' + Date.now(); }, 500 * img._r);
+  }
+  window.addEventListener('error', function(e){
+    var t = e.target;
+    if(t && t.tagName === 'IMG' && !t.id) fix(t);
+  }, true);
+  window.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      document.querySelectorAll('img').forEach(function(img){
+        if(img.id) return; // 灯箱大图容器不处理
+        if(img.complete && img.naturalWidth === 0 && img.src) fix(img);
+      });
+    }, 1500);
+  });
+})();
+</script></head>
+<body>
+
+<!-- 导航 -->
+<div class="nav-wrap">
+  <nav class="nav" id="nav">
+    <span class="pill"></span>
+    <a href="#home" class="active">首页</a>
+    <a href="#about">关于我</a>
+    <a href="#education">教育背景</a>
+    <a href="#experience">工作经历</a>
+    <a href="#portfolio">作品集</a>
+  </nav>
+</div>
+
+<!-- 首页 Hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1>不安分的Curious mind<br>永远在学新东西。</h1>
+    <div class="hero-actions">
+      <a class="btn" href="assets/简历.pdf" download="邢慧东-简历.pdf">下载简历</a>
+      <a class="btn ghost" href="#" id="contactBtn">联系我</a>
+    </div>
+    <img decoding="async" class="hero-img" src="assets/folders-hero.webp" alt="彩色文件夹">
+  </div>
+</section>
+
+<!-- 关于我 -->
+<section id="about">
+  <div class="container">
+    <div class="about-intro reveal">
+      <div class="about-avatar">
+        <img loading="lazy" decoding="async" src="assets/avatar-cartoon.webp" alt="卡通形象">
+      </div>
+      <div>
+        <h2>Hi！<br>我是邢慧东。</h2>
+        <p class="roles">平面设计师 / 新媒体 / 编导 / 策划 / 拍摄 / 剪辑</p>
+      </div>
+    </div>
+
+    <div class="about-detail reveal">
+      <!-- 个人信息卡 -->
+      <div class="profile-card">
+        <div class="profile-top">
+          <img loading="lazy" decoding="async" class="zoomable" src="assets/avatar-photo.webp" alt="证件照" title="点击查看大图">
+          <div>
+            <h3>邢慧东</h3>
+            <div class="en">子元</div>
+            <div class="tags">平面设计·新媒体<br>编导 / 策划 / 拍摄 / 剪辑</div>
+          </div>
+        </div>
+        <div class="profile-bar">基本信息</div>
+        <div class="profile-info">
+          男 / 1997 / 山东<br>
+          17864234703<br>
+          17864234703@163.com
+        </div>
+        <h4 class="tools-title">TOOLS / 设计工具</h4>
+        <div class="tool-group"><b>/ 办公类</b><span>Word、Excel、PowerPoint；</span></div>
+        <div class="tool-group"><b>/ 平面类</b><span>Adobe Illustrator、Adobe Photoshop；</span></div>
+        <div class="tool-group"><b>/ 视频类</b><span>Adobe Premiere Pro、DaVinci Resolve；</span></div>
+        <div class="tool-group"><b>/ 人工智能类</b><span>Text / Image / Video Generation Models + Agent（ChatGPT、Codex）</span></div>
+      </div>
+
+      <!-- 核心优势卡 -->
+      <div class="strength-card">
+        <h4>CORE STRENGTHS / 核心优势</h4>
+        <div class="stat-group-title">平面设计类</div>
+        <div class="stats">
+          <div class="stat">
+            <div class="num"><span class="count" data-target="5000">0</span><sup>+</sup></div>
+            <div class="label">设计订单累计</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="count" data-target="20">0</span><sup>+</sup></div>
+            <div class="label">项目案例累计</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="count" data-target="5">0</span><sup>+</sup></div>
+            <div class="label">工作年限</div>
+          </div>
+        </div>
+        <div class="stat-group-title">影视创作类</div>
+        <div class="stats">
+          <div class="stat">
+            <div class="num"><span class="count" data-target="2000">0</span><sup>+</sup></div>
+            <div class="label">拍摄时长累计</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="count" data-target="2048">0</span><sup>+</sup></div>
+            <div class="label">拍摄素材GB累计</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="count" data-target="3500">0</span><sup>+</sup></div>
+            <div class="label">文本创作时长累计</div>
+          </div>
+        </div>
+        <div class="skills">
+          <h4>SKILLS / 专业技能</h4>
+          <ul>
+            <li>· 信息架构 · 需求分析 · 交互设计 · 海报设计 · VI设计 · 物料设计 · 新媒体运营 · 小程序</li>
+            <li>· B端设计 · C端设计 · 视频创作 · Agent流程设计 · AI设计</li>
+            <li>· AI 工作模式 · 熟悉设计规范 / 影视制作 · 多个0-1设计案例经验 · 5年以上设计经验</li>
+          </ul>
+        </div>
+      </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- 教育背景 -->
+<section id="education">
+  <div class="container">
+    <div class="section-tag reveal">教育背景</div>
+
+    <div class="edu-grid reveal">
+      <div class="edu-card">
+        <div class="edu-item">
+          <div class="row1"><span>山东大学</span><span>工商管理</span></div>
+          <div class="row2"><span>2019.09 - 2023.06</span><span>本科</span></div>
+        </div>
+        <h5 class="edu-title">校内职务经历</h5>
+        <div class="edu-list">
+          <div class="edu-row"><b>本科阶段</b><span class="mid">宣传部 / 副部长</span><b>青年志愿者协会</b></div>
+          <ul>
+            <li>· 负责社团招新活动、活动设计、宣传视频拍摄制作以及公众号运营；</li>
+            <li>· 担任一期青年志愿者协会元旦晚会的策划；</li>
+            <li>· 任期内完成了“善行100”募捐活动的策划和执行，以及听障儿童校园活动。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-item">
+          <div class="row1"><span>江西科技师范大学</span><span>戏剧与影视</span></div>
+          <div class="row2"><span>2024.08 - 2027.07</span><span>硕士</span></div>
+        </div>
+        <h5 class="edu-title">专业实践成果</h5>
+        <div class="edu-list">
+          <div class="edu-row head">论文发表<span class="right">江西科技师范大学学报</span></div>
+          <div class="edu-row">数字技术赋能下的研究生优质课程建设策略研究<span class="mid"></span>2026.09</div>
+        </div>
+      </div>
+    </div>
+
+    <h5 class="edu-title white-pill reveal">研究生创新专项资金项目</h5>
+
+    <div class="table-card edu-card reveal">
+      <table>
+        <tr><th>级别</th><th>课题名称</th><th>立项时间</th></tr>
+        <tr><td>校级</td><td>AI时代影视生成的受众审美与艺术表达研究</td><td>2025.09</td></tr>
+        <tr><td>省级</td><td>生成式AI对影视劳动力的替代效应与影视产业创新发展研究</td><td>2025.09</td></tr>
+        <tr><td>省级</td><td>AIGC技术介入下博物馆文化呈现的创新路径研究</td><td>2025.09</td></tr>
+      </table>
+    </div>
+
+    <h5 class="edu-title white-pill reveal">竞赛获奖成果</h5>
+
+    <div class="table-card edu-card reveal">
+      <h5>全国大学生广告艺术大赛</h5>
+      <table>
+        <tr><th>类别</th><th>品牌</th><th>奖项</th><th>作品</th><th>时间</th></tr>
+        <tr><td>平面广告</td><td>传奇今生</td><td>省一等奖 / 校级二等奖</td><td>《华韵绽彩：传奇今生视觉重塑》</td><td>2025.05</td></tr>
+        <tr><td>策划案类</td><td>纳爱斯</td><td>国家级新锐创意奖 / 校级一等奖</td><td>《冰清柚你 持久微笑》</td><td>2025.05</td></tr>
+        <tr><td>微电影广告</td><td>三九胃泰</td><td>省级二等奖</td><td>《辣味江湖》</td><td>2025.05</td></tr>
+      </table>
+    </div>
+
+    <div class="table-card edu-card reveal">
+      <h5>中国大学生广告艺术节学院奖</h5>
+      <table>
+        <tr><th>类别</th><th>品牌</th><th>奖项</th><th>作品</th><th>时间</th></tr>
+        <tr><td>影视广告</td><td>雀巢茶萃</td><td>国家级优秀类</td><td>《茶萃小“汁”》</td><td>2024.12</td></tr>
+        <tr><td>影视广告</td><td>华润紫竹</td><td>国家级优秀类</td><td>《"膜"力焕新》</td><td>2024.12</td></tr>
+        <tr><td>短视频</td><td>银鹭食品</td><td>国家级优秀类</td><td>《花生奶 好事来》</td><td>2025.07</td></tr>
+        <tr><td>视频类</td><td>即梦AI</td><td>国家级优秀类</td><td>《万应之神》</td><td>2026.08</td></tr>
+      </table>
+    </div>
+
+    <div class="table-card edu-card reveal">
+      <h5>社会赛事</h5>
+      <table>
+        <tr><th>类别</th><th>赛事</th><th>奖项</th><th>作品</th><th>时间</th></tr>
+        <tr><td>设计类</td><td>"密云·東杏"LOGO创意竞赛</td><td>入围奖</td><td>《密云·東杏》</td><td>2021.07</td></tr>
+        <tr><td>短视频</td><td>南昌市燃气安全宣传创作大赛</td><td>市级一等奖</td><td>《怦燃心动》</td><td>2024.11</td></tr>
+        <tr><td>短视频</td><td>"就是曾湾"网络短视频大赛</td><td>市级入围奖</td><td>《文化之脉》</td><td>2025.03</td></tr>
+        <tr><td>融媒刊</td><td>全国大学生新媒体创意大赛</td><td>省级三等奖</td><td>《在泰山 不泰一样》</td><td>2025.12</td></tr>
+        <tr><td>AI影像</td><td>大学生AI艺术节</td><td>国家级入围</td><td>《万应之神》</td><td>2026.08</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 工作经历 -->
+<section id="experience">
+  <div class="container">
+    <div class="section-tag reveal">工作经历</div>
+
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-year">2020</div>
+        <div class="tl-card">
+          <div class="tl-head"><b>设计师 / 平面设计</b><span>哈尔滨市香坊区魔印视觉工作室 / 乙方设计公司</span></div>
+          <p>负责企业LOGO及VI设计，任期内设计超过3000余单，服务千余家中小企业，配合完成政企形象、物料等设计流程。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023</div>
+        <div class="tl-card">
+          <div class="tl-head"><b>设计师 / 平面设计</b><span>午火传象工作室 / 乙方设计公司</span></div>
+          <p>本人独立的设计工作室，主要内容包括LOGO及VI设计、海报设计、公众号排版、线上店铺装修、活动设计、物料设计；设计项目案例超200+。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2024</div>
+        <div class="tl-card">
+          <div class="tl-head"><b>设计师 / 平面设计</b><span>浙江青一美科技有限公司 / 甲方医美公司</span></div>
+          <p>运营中心总部品牌设计，负责公司统一视觉设计及下设各诊所的物料设计，包含公司一切平面设计工作：早安海、海报、产品海报、图册、价目单、诊所装饰海报、小程序物料、产品包装平面。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026</div>
+        <div class="tl-card">
+          <div class="tl-head"><b>编导 / 运营策划</b><span>江西涅羽堂非遗文化传播有限公司 / 文化传播公司</span></div>
+          <p>参与主题纪录片的全程创作，包括前期主题策划与框架设计；中期拍摄执行、后期制作：素材剪辑、视觉特效包装及成片优化。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="self-review reveal">
+      <h4>SELF REVIEW / 自我评价</h4>
+      <p>拥有良好的设计思维与用户体验意识，能够快速理解业务需求并输出高质量设计方案；具备AI产品工具及设计经验；善于跨团队协作；可独立推动项目从0到1落地；具备较好的主动学习实践能力，创新意识与创造能力。</p>
+      <div class="traits"><span>INFJ</span><span>强执行力</span><span>抗压能力</span><span>学习能力</span><span>项目协作</span></div>
+    </div>
+
+    <div class="tools-strip reveal">
+      <p>从传统设计软件到 AI 生产管线，覆盖 设计 — 影像 — 智能化 全流程创作工具链。</p>
+      <img decoding="async" src="assets/tool-ai.png" alt="Illustrator" loading="lazy">
+      <img decoding="async" src="assets/tool-ps.png" alt="Photoshop" loading="lazy">
+      <img decoding="async" src="assets/tool-pr.png" alt="Premiere" loading="lazy">
+      <img decoding="async" src="assets/tool-davinci.png" alt="DaVinci" loading="lazy">
+      <img decoding="async" src="assets/tool-chatgpt.png" alt="ChatGPT" loading="lazy">
+      <img decoding="async" src="assets/tool-copilot.png" alt="Copilot" loading="lazy">
+      <img decoding="async" src="assets/tool-jimeng.png" alt="即梦" loading="lazy">
+      <img decoding="async" src="assets/tool-banana.png" alt="Nano Banana" loading="lazy">
+    </div>
+  </div>
+
+
+    
+</section>
+
+<!-- 作品集 -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-tag reveal">作品集</div>
+    <div class="portfolio-grid reveal">
+      <a class="folder-item" href="icons.html" title="图标设计">
+        <img decoding="async" src="assets/folder-icon.webp" alt="图标设计文件夹" loading="lazy">
+      </a>
+      <a class="folder-item" href="posters.html" title="海报设计">
+        <img decoding="async" src="assets/folder-poster.webp" alt="海报设计文件夹" loading="lazy">
+      </a>
+      <a class="folder-item" href="projects.html" title="项目设计">
+        <img decoding="async" src="assets/folder-project.webp" alt="项目设计文件夹" loading="lazy">
+      </a>
+      <a class="folder-item" href="videos.html" title="影视作品">
+        <img decoding="async" src="assets/folder-video.webp" alt="影视作品文件夹" loading="lazy">
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 邢慧东 · 不安分的 Curious mind</footer>
+
+<!-- 联系我弹窗 -->
+<div class="modal-mask" id="contactModal">
+  <div class="modal-card">
+    <img loading="lazy" decoding="async" src="assets/contact.png" alt="联系方式：微信 ZIONCOZE / 手机 17864234703">
+    <button class="modal-close" id="contactClose" aria-label="返回"></button>
+  </div>
+</div>
+
+<script>
+// 导航滑动胶囊
+const links = document.querySelectorAll('#nav a');
+const sections = [...links].map(a => document.querySelector(a.getAttribute('href')));
+const pill = document.querySelector('#nav .pill');
+function movePill(animate = true) {
+  const active = document.querySelector('#nav a.active');
+  if (!active || !pill) return;
+  if (!animate) pill.style.transition = 'none';
+  pill.style.left = active.offsetLeft + 'px';
+  pill.style.width = active.offsetWidth + 'px';
+  if (!animate) requestAnimationFrame(() => pill.style.transition = '');
+}
+function setActive(i) {
+  links.forEach((a, j) => a.classList.toggle('active', i === j));
+  movePill();
+}
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 200;
+  let cur = 0;
+  sections.forEach((s, i) => { if (s && s.offsetTop <= y) cur = i; });
+  // 页面已滚动到底部时，强制高亮最后一项
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 40) {
+    cur = sections.length - 1;
+  }
+  setActive(cur);
+});
+window.addEventListener('resize', () => movePill(false));
+window.addEventListener('load', () => movePill(false));
+setActive(0); movePill(false);
+
+// 联系我弹窗
+const modal = document.getElementById('contactModal');
+document.getElementById('contactBtn').addEventListener('click', e => { e.preventDefault(); modal.classList.add('open'); });
+document.getElementById('contactClose').addEventListener('click', () => modal.classList.remove('open'));
+modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('open'); });
+
+
+// 滚动进入动画
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// 数字滚动（每次进入视野都触发，离开后归零）
+function runCount(el) {
+  const target = +el.dataset.target, dur = 1200, t0 = performance.now();
+  (function tick(t) {
+    const p = Math.min((t - t0) / dur, 1);
+    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(tick);
+  })(t0);
+}
+const counterIO = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting) runCount(e.target);
+    else e.target.textContent = '0';
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('.count').forEach(el => counterIO.observe(el));
+</script>
+
+<!-- 图片灯箱 -->
+<div class="img-lightbox" id="imgLightbox">
+  <button class="lb-close" aria-label="关闭"></button>
+  <img src="" alt="预览大图">
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('imgLightbox');
+  var lbImg=lb.querySelector('img');
+  document.querySelectorAll('img.zoomable').forEach(function(img){
+    img.style.cursor='zoom-in';
+  });
+  var lbImg=lb.querySelector('img');
+  function open(src){
+    lbImg.src=src;
+    lbImg.classList.add('lb-dim');
+    lb.classList.add('active');
+    document.body.classList.add('lb-blur');
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ lbImg.classList.remove('lb-dim'); }); });
+  }
+  function close(){
+    lbImg.classList.add('lb-dim');
+    setTimeout(function(){
+      lb.classList.remove('active');
+      document.body.classList.remove('lb-blur');
+      lbImg.classList.remove('lb-dim');
+      lbImg.src='';
+    }, 300);
+  }
+  document.querySelectorAll('img.zoomable').forEach(function(img){ img.removeEventListener('click', img._lbOpen||function(){}); });
+  document.querySelectorAll('img.zoomable').forEach(function(img){
+    img.addEventListener('click',function(){ open(img.dataset.full || img.src); });
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
+</body>
+</html>

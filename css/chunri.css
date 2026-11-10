@@ -1,7 +1,7 @@
 /* ===== 春日计划 四季主题 ===== */
 
 .chunri-page .yc-hero .pill-tag { background: #21a05c; color: #fff; }
-.chunri-page .yc-hero h1 em { color: #21a05c; }
+.chunri-page .yc-hero h1 em { color: #fff; }
 
 /* 各季胶囊色 */
 .season-1 .pill-tag--light { background: #21a05c; color: #fff; }

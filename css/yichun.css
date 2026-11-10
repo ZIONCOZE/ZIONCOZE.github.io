@@ -3,9 +3,9 @@ body.yichun-page { background: var(--bg); overflow-x: hidden; }
 
 /* Hero */
 .yc-hero { text-align: center; padding: 130px 24px 70px; }
-.yc-hero h1 { font-size: clamp(36px, 5vw, 62px); font-weight: 700; margin-top: 22px; }
-.yc-hero h1 em { font-style: normal; color: var(--blue); }
-.yc-hero > p { margin-top: 18px; color: var(--ink-2); font-size: 17px; letter-spacing: .06em; }
+.yc-hero h1 { font-size: clamp(36px, 5vw, 62px); font-weight: 700; margin-top: 22px; color: #fff; }
+.yc-hero h1 em { font-style: normal; color: #fff; }
+.yc-hero > p { margin-top: 18px; color: #fff; font-size: 17px; letter-spacing: .06em; }
 .pill-tag {
   display: inline-block; padding: 8px 20px;
   background: #1b1b1b; color: #fff; border-radius: 999px;
@@ -123,7 +123,7 @@ body.yichun-page { background: var(--bg); overflow-x: hidden; }
 
 /* 尾声 */
 .yc-outro { text-align: center; padding: 40px 24px 130px; }
-.yc-outro p { color: var(--ink-2); font-size: 15px; letter-spacing: .05em; }
+.yc-outro p { color: #fff; font-size: 15px; letter-spacing: .05em; }
 
 /* reveal 动画 */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }

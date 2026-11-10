@@ -14,8 +14,8 @@ body.icons-page { background: var(--bg); overflow-x: hidden; }
 
 /* 主标题 */
 .icons-hero { text-align: center; padding: 90px 24px 60px; }
-.icons-hero h1 { font-size: clamp(34px, 4.5vw, 56px); font-weight: 700; }
-.icons-hero p { margin-top: 14px; color: var(--ink-2); font-size: 17px; letter-spacing: .08em; }
+.icons-hero h1 { font-size: clamp(34px, 4.5vw, 56px); font-weight: 700; color: #fff; }
+.icons-hero p { margin-top: 14px; color: rgba(255,255,255,.92); font-size: 17px; letter-spacing: .08em; }
 
 /* 跑马灯四行 */
 .logo-rows { display: flex; flex-direction: column; gap: 26px; padding-bottom: 70px; }
@@ -62,7 +62,7 @@ body.icons-page { background: var(--bg); overflow-x: hidden; }
 
 /* 结尾引导语 */
 .icons-outro { text-align: center; padding: 10px 24px 100px; }
-.icons-outro p { color: var(--ink-2); font-size: 15px; line-height: 2.1; letter-spacing: .05em; }
+.icons-outro p { color: rgba(255,255,255,.95); font-size: 15px; line-height: 2.1; letter-spacing: .05em; }
 
 /* 响应式 */
 @media (max-width: 960px) {

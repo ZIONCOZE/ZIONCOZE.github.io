@@ -1,7 +1,7 @@
 /* ===== 十虎 Ten Tiger 页主题 ===== */
 
 .tenhu-page .yc-hero .pill-tag { background: #F5A623; color: #fff; }
-.tenhu-page .yc-hero h1 em { color: #F5A623; }
+.tenhu-page .yc-hero h1 em { color: #fff; }
 
 /* 编号：浅色章用虎橙胶囊；深色章恢复文字编号 */
 .yc-chapter.light .vi-txt .vi-no { background: #F5A623; color: #fff; opacity: 1; font-size: 11px; letter-spacing: .1em; padding: 3px 10px; border-radius: 999px; font-family: Consolas, monospace; display: inline-block; }

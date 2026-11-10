@@ -1,0 +1,40 @@
+/* ===== 项目设计作品集 · 新版 ===== */
+.projects-new-page {
+  min-height: 100vh;
+  background: #F4F4F2;
+  padding: 90px 24px 110px;
+}
+.back-btn { position: fixed; top: 28px; right: 32px; z-index: 50; }
+.pj-head { text-align: center; margin: 10px 0 70px; }
+.pj-head h1 { font-size: clamp(34px, 4.6vw, 56px); font-weight: 800; color: #1c1e21; }
+.pj-head p { margin-top: 16px; font-size: 15.5px; color: #7a7f86; letter-spacing: .06em; }
+
+.pj-stage { max-width: 1180px; margin: 0 auto; }
+.pj-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; justify-items: center; }
+.pj-row--two { margin-top: 44px; }
+
+.pj-card {
+  display: flex; flex-direction: column;
+  width: 100%; max-width: 356px;
+  background: #fff; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 18px 50px rgba(20, 45, 40, .25);
+  transition: transform .3s ease, box-shadow .3s ease;
+  opacity: 0; transform: translateY(26px);
+}
+.pj-card.in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
+.pj-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 26px 60px rgba(20, 45, 40, .35); }
+
+.pj-cover { display: block; padding: 12px 12px 0; }
+.pj-cover img {
+  width: 100%; display: block; border-radius: 12px;
+}
+.pj-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px 16px;
+}
+.pj-bar b { font-size: 13.5px; font-weight: 600; color: #2f6fed; letter-spacing: .02em; }
+.pj-bar i { font-style: normal; font-size: 13.5px; font-weight: 600; color: #17191d; }
+
+@media (max-width: 900px) {
+  .pj-row { grid-template-columns: 1fr; }
+}

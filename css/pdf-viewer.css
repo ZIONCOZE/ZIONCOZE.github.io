@@ -1,0 +1,109 @@
+/* ===== 自定义 PDF 查看器（效果图样式） ===== */
+
+.pdf-viewer {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(30,40,70,.08);
+  display: flex;
+  flex-direction: column;
+  height: min(82vh, 860px);
+}
+.drawer-body .pdf-viewer { min-height: 620px; }
+
+/* 顶部工具栏 */
+.pv-toolbar {
+  flex: 0 0 auto;
+  display: flex; align-items: center;
+  padding: 14px 20px;
+  gap: 12px;
+  background: #fff;
+}
+.pv-left { display: flex; align-items: center; gap: 12px; flex: 1; }
+.pv-menu {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 0; background: #1d6ef5; color: #fff;
+  padding: 0; flex: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.pv-menu svg { display: block; }
+.pv-menu:hover { background: #1558cc; }
+.pv-title { font-weight: 700; font-size: 16px; color: #1c1e22; }
+
+.pv-page { color: #1c1e22; font-size: 15px; margin-left: auto; }
+.pv-page b { font-weight: 700; }
+
+.pv-zoom {
+  display: flex; align-items: center; gap: 4px;
+  background: #1d6ef5; color: #fff;
+  border-radius: 999px; padding: 5px 8px;
+}
+.pv-zoom button {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 0; background: transparent; color: #fff;
+  font-size: 17px; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s;
+}
+.pv-zoom button:hover { background: rgba(255,255,255,.22); }
+.pv-zoom .pv-pct { min-width: 46px; text-align: center; font-size: 13px; font-weight: 600; }
+
+/* 主体：浅灰底，白色缩略卡片 + 白色页面 */
+.pv-body { flex: 1; display: flex; min-height: 0; background: #d9d9d9; }
+
+.pv-thumbs {
+  width: 170px; flex: 0 0 auto;
+  overflow-y: auto;
+  background: #d9d9d9;
+  padding: 18px 8px 24px 18px;
+  transition: width .3s ease, padding .3s ease, opacity .3s;
+}
+.pdf-viewer.no-thumbs .pv-thumbs { width: 0; padding: 18px 0 24px; opacity: 0; overflow: hidden; }
+
+.pv-thumb-list { position: relative; }
+.pv-thumb {
+  margin: 0 0 18px;
+  cursor: pointer;
+  text-align: center;
+}
+.pv-thumb canvas {
+  width: 126px; display: block; margin: 0 auto;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  border: 2px solid transparent;
+  transition: border-color .2s;
+}
+.pv-thumb:hover canvas { border-color: #9fb8e8; }
+.pv-thumb.active canvas { border-color: #1d6ef5; }
+.pv-thumb span { display: block; margin: 8px 0 14px; font-size: 13px; color: #1c1e22; }
+
+/* 页面滚动区：黑色胶囊滚动条 + 透明轨道 */
+.pv-scroll {
+  flex: 1; min-width: 0;
+  overflow: auto;
+  background: #d9d9d9;
+  padding: 18px 14px 24px 6px;
+  scrollbar-width: auto;
+}
+.pv-scroll::-webkit-scrollbar { width: 14px; }
+.pv-scroll::-webkit-scrollbar-track { background: transparent; margin: 18px 0; }
+.pv-scroll::-webkit-scrollbar-thumb { background: #1c1c1c; border-radius: 7px; }
+.pv-scroll::-webkit-scrollbar-thumb:hover { background: #000; }
+.pv-thumbs::-webkit-scrollbar { width: 12px; }
+.pv-thumbs::-webkit-scrollbar-track { background: transparent; margin: 12px 0; }
+.pv-thumbs::-webkit-scrollbar-thumb { background: #1c1c1c; border-radius: 6px; }
+
+/* 页面占位：白色纸张样式 */
+.pv-pages { position: relative; display: flex; flex-direction: column; align-items: center; }
+.pv-page-ph {
+  margin: 0 auto 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.10);
+  overflow: hidden;
+}
+.pv-page-ph canvas {
+  display: block;
+}

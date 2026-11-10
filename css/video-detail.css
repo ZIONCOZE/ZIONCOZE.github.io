@@ -1,0 +1,200 @@
+/* ===== 影视作品三级页（单作品档案） ===== */
+
+.detail-hero { padding-bottom: 30px; }
+.detail-hero .chips { margin-top: 18px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.detail-hero .chip {
+  background: #fff; border: 1px solid #e2e5ea;
+  color: var(--ink-2, #5a6070);
+  font-size: 13px; padding: 6px 16px; border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(30,40,70,.05);
+}
+
+/* ① 正片播放器 */
+.player-wrap {
+  max-width: 1080px;
+  margin: 0 auto 56px;
+  padding: 0 32px;
+}
+.player {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  border-radius: 18px;
+  display: block;
+  background: #000;
+  box-shadow: 0 24px 60px rgba(20,25,45,.18);
+}
+
+/* ③④ 文档板块 */
+.flow { max-width: 1080px; margin: 0 auto; padding: 0 32px 120px; }
+.doc-section { margin-bottom: 59px; }
+
+.pill-title {
+  display: inline-block;
+  background: #17181c; color: #fff;
+  font-size: 14.5px; font-weight: 700;
+  padding: 8px 22px; border-radius: 999px;
+  margin: 0 0 16px;
+}
+
+.doc-frame {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(30,40,70,.08);
+}
+.doc-frame iframe {
+  width: 100%;
+  height: min(78vh, 820px);
+  border: 0;
+  display: block;
+}
+
+/* ④ Prompt 抽屉 */
+.drawer-sec { margin-bottom: 0; }
+.drawer-head {
+  display: flex; align-items: center; gap: 18px;
+  background: none; border: 0; padding: 0; cursor: pointer;
+}
+.drawer-head .drawer-arrow {
+  color: var(--ink-2, #5a6070); font-size: 14px; font-weight: 600;
+  background: #fff; border-radius: 999px; padding: 8px 20px;
+  box-shadow: 0 2px 10px rgba(30,40,70,.08);
+  transition: transform .3s, color .2s;
+}
+.drawer-head:hover .drawer-arrow { color: var(--blue, #1d4ed8); }
+.drawer-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .5s cubic-bezier(.22,1,.36,1);
+}
+.drawer-body > * { overflow: hidden; min-height: 0; }
+.drawer-body.open { grid-template-rows: 1fr; }
+.drawer-body .doc-frame { margin-top: 22px; }
+
+/* ===== 作品介绍 ===== */
+.v-desc-wrap {
+  /* 与视频本体同宽：播放器容器1080px两侧各留32px内边距，视频实际宽度1016px */
+  max-width: 1016px; margin: 34px auto 90px; padding: 44px 32px 44px;
+  background: #fff; border-radius: 24px;
+  box-shadow: 0 6px 28px rgba(30, 40, 70, .08);
+}
+.v-desc-head { max-width: 900px; margin: 0 auto 26px; }
+.v-desc { max-width: 900px; margin: 0 auto; }
+.v-desc-list {
+  max-width: 900px; margin: 0 auto; padding: 0; list-style: none;
+  font-size: 15px; line-height: 2; color: #4a4a46;
+}
+.v-desc-list li { margin-bottom: 10px; text-align: justify; position: relative; }
+.v-desc-list li::before {
+  content: ''; position: absolute; left: -14px; top: calc(1em - 2px);
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #1b1b1b;
+}
+.v-desc-head + .v-desc-list { margin-top: 2px; }
+.v-desc-list + .v-desc-head { margin-top: 30px; }
+.v-desc + .v-desc-head { margin-top: 30px; }
+.v-desc-head { display: flex; }
+.v-desc-pill {
+  display: inline-block; padding: 7px 22px;
+  background: #1b1b1b; color: #fff;
+  border-radius: 999px;
+  font-size: 13.5px; letter-spacing: .06em;
+}
+.v-desc {
+  font-size: 15px; line-height: 2; color: #4a4a46;
+  text-align: justify;
+}
+
+/* ===== 自定义视频控制条 ===== */
+.vc-wrap {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(20, 25, 45, .18);
+}
+.vc-wrap .player { border-radius: 0; box-shadow: none; }
+.vc-wrap:fullscreen { border-radius: 0; width: 100%; height: 100%; background: #000; }
+.vc-wrap:fullscreen video { width: 100%; height: 100%; object-fit: contain; }
+
+.vc-bar {
+  position: absolute; left: 12px; right: 12px; bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 14px;
+  background: rgba(20, 20, 24, .82);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 5;
+}
+.vc-wrap .vc-bar { opacity: 1; transform: none; }
+.vc-wrap.vc-idle .vc-bar { opacity: 0; transform: translateY(8px); pointer-events: none; }
+.vc-wrap:fullscreen .vc-bar { left: 20px; right: 20px; bottom: 20px; }
+
+.vc-btn {
+  width: 34px; height: 34px; flex: none;
+  background: transparent; border: none; cursor: pointer;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.vc-btn:hover { background: rgba(255, 255, 255, .14); }
+.vc-btn svg { width: 22px; height: 22px; fill: #fff; }
+
+.vc-play .ic-pause { display: none; }
+.vc-bar.playing .ic-play { display: none; }
+.vc-bar.playing .ic-pause { display: block; }
+.vc-mute .ic-mute { display: none; }
+.vc-bar.muted .ic-vol { display: none; }
+.vc-bar.muted .ic-mute { display: block; }
+
+.vc-time {
+  color: #fff; font-size: 12.5px; font-variant-numeric: tabular-nums;
+  flex: none; opacity: .92; letter-spacing: .02em;
+}
+
+.vc-timeline {
+  flex: 1; height: 22px;
+  display: flex; align-items: center;
+  cursor: pointer;
+  touch-action: none;
+}
+.vc-track {
+  position: relative; width: 100%; height: 5px;
+  background: rgba(255, 255, 255, .25);
+  border-radius: 999px;
+  overflow: visible;
+}
+.vc-buffer {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+  background: rgba(255, 255, 255, .38);
+  border-radius: 999px;
+}
+.vc-progress {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+  background: #3d7bff;
+  border-radius: 999px;
+  pointer-events: none;
+}
+.vc-knob {
+  position: absolute; top: 50%; left: 0;
+  width: 13px; height: 13px;
+  background: #fff; border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+  pointer-events: none;
+  transition: transform .15s;
+}
+.vc-timeline:hover .vc-knob { transform: translate(-50%, -50%) scale(1.25); }
+
+/* 网页全屏兜底（浏览器全屏API不可用时） */
+.vc-wrap.vc-webfull {
+  position: fixed; inset: 0; z-index: 9999;
+  border-radius: 0; background: #000;
+  box-shadow: none;
+}
+.vc-wrap.vc-webfull video {
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+.vc-wrap.vc-webfull .vc-bar { left: 20px; right: 20px; bottom: 20px; }

@@ -1,0 +1,74 @@
+/* ===== 春日计划 四季主题 ===== */
+
+.chunri-page .yc-hero .pill-tag { background: #21a05c; color: #fff; }
+.chunri-page .yc-hero h1 em { color: #21a05c; }
+
+/* 各季胶囊色 */
+.season-1 .pill-tag--light { background: #21a05c; color: #fff; }
+.season-2 .pill-tag--light { background: #2ec46e; color: #fff; }
+.season-3 .pill-tag--light { background: #1226ee; color: #fff; }
+.season-4 .pill-tag--light { background: #0fa88f; color: #fff; }
+
+/* 编号胶囊随季换色（浅色章绿、深色章按季） */
+.yc-chapter.light .vi-txt .vi-no { background: #21a05c; color: #fff; opacity: 1; font-size: 11px; letter-spacing: .1em; padding: 3px 10px; border-radius: 999px; font-family: Consolas, monospace; display: inline-block; }
+.season-2 .vi-txt .vi-no { background: #2ec46e; color: #fff; }
+.season-3 .vi-txt .vi-no { background: #1226ee; color: #fff; }
+.season-4 .vi-txt .vi-no { background: #0fa88f; color: #fff; }
+
+/* 尾声 */
+.chunri-page .yc-epilogue { text-align: center; padding: 110px 20px 130px; background: #f4f4f2; }
+.chunri-page .yc-epilogue .epi-line { font-size: clamp(22px, 2.6vw, 32px); font-weight: 700; line-height: 1.8; color: #2c3a2e; }
+.chunri-page .yc-epilogue .epi-mark { display: inline-block; margin-top: 34px; font-size: 12px; letter-spacing: .35em; color: #8a9a8c; font-family: Consolas, monospace; }
+
+/* 第三季深色页底图适配 */
+.season-3 .vi-img, .season-4 .vi-img { background: #17181c; }
+.season-3 .vi-img img, .season-4 .vi-img img { border-radius: 8px; }
+
+/* 图片限幅（同十虎） */
+.chunri-page .vi-item .vi-img img { width: auto; max-width: 620px; max-height: 56vh; margin-inline: auto; }
+.chunri-page .vi-item--stack .vi-img img { max-width: 700px; max-height: 64vh; }
+.chunri-page .vi-item .vi-img.vi-card-fit img { max-width: min(420px, 100%); max-height: 78vh; }
+
+/* 白框贴图：卡片随图片收缩，四边等距 */
+.chunri-page .vi-item .vi-img { width: fit-content; max-width: 100%; margin-inline: auto; padding: clamp(10px, 1.1vw, 18px); }
+.chunri-page .vi-item .vi-img img { display: block; }
+.tenhu-page .vi-item .vi-img { width: fit-content; max-width: 100%; margin-inline: auto; padding: clamp(10px, 1.1vw, 18px); }
+.tenhu-page .vi-item .vi-img img { display: block; }
+
+/* side/flip：白卡贴满列宽，图片限宽适配，横向等距由居中保证 */
+.chunri-page .vi-item.side .vi-img, .chunri-page .vi-item--flip .vi-img { width: auto; }
+.chunri-page .vi-item.side .vi-img img, .chunri-page .vi-item--flip .vi-img img { max-width: 100%; }
+
+/* ===== 主视觉/封面条目全宽等比放大 ===== */
+.chunri-page .vi-img.vi-full { width: 100%; }
+.chunri-page .vi-img.vi-full img { width: 100%; max-width: 100%; max-height: none; }
+
+/* ===== 手机端推文长图样机（复用 meixy dc-* 体系） ===== */
+.dc-phone { position: relative; width: min(360px, 100%); justify-self: center; align-self: center; transition: transform .25s ease; }
+.dc-phone:hover { transform: translateY(-4px); }
+.dc-frame { display: block; width: 100%; filter: drop-shadow(0 18px 44px rgba(0,0,0,.45)); pointer-events: none; }
+.dc-screen { position: absolute; left: 13.7%; top: 4.8%; width: 72.45%; height: 90.1%; overflow: hidden; border-radius: 12.5% / 5.7%; background: #fff; }
+.dc-scroll { position: absolute; inset: 0; overflow-y: scroll; scrollbar-width: none; -ms-overflow-style: none; cursor: grab; user-select: none; touch-action: pan-y; }
+.dc-scroll::-webkit-scrollbar { display: none; }
+.dc-scroll.dragging { cursor: grabbing; }
+.dc-stack img { display: block; width: 100%; pointer-events: none; }
+.chunri-page .yc-chapter.dark .dc-frame { filter: drop-shadow(0 14px 32px rgba(0,0,0,.3)); }
+.dc-hint { text-align: center; font-size: 12.5px; color: var(--ink-2); margin-top: 10px; letter-spacing: .06em; }
+.yc-chapter.dark .dc-hint { color: rgba(255,255,255,.55); }
+
+/* ===== 10号条目：文字与手机两列 ===== */
+.chunri-page .vi-item--side { grid-template-columns: 380px 1fr; align-items: start; }
+.chunri-page .vi-item--side .dc-phone { justify-self: center; align-self: start; position: sticky; top: 100px; }
+.chunri-page .vi-item--side .vi-txt { align-self: stretch; }
+
+/* ===== 全页去底框：图片等比放大对齐 ===== */
+.chunri-page .vi-item .vi-img { width: 100%; max-width: 100%; padding: 0; background: transparent !important; box-shadow: none; }
+.chunri-page .vi-item .vi-img img { width: 100%; max-width: 100%; max-height: none; margin: 0; }
+.chunri-page .vi-item .vi-img.vi-full img { width: 100%; }
+.chunri-page .vi-item .vi-img.vi-card-fit { width: auto; }
+.chunri-page .vi-item .vi-img.vi-card-fit img { max-width: 100%; }
+
+/* ===== 统一上下排版：取消左右交错 ===== */
+.chunri-page .vi-item.side, .chunri-page .vi-item--flip { grid-template-columns: 1fr; }
+.chunri-page .vi-item.side .vi-txt, .chunri-page .vi-item--flip .vi-txt { order: 2; }
+.chunri-page .vi-item.side .vi-img, .chunri-page .vi-item--flip .vi-img { order: 1; }
